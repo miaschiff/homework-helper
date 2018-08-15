@@ -1,0 +1,361 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+</head>
+
+
+
+
+
+  <body onload="getSleep();" >
+  <div class="container">
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">RightMinds!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a href = "website.html" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Today's Homework</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Stats
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
+          <a class="dropdown-item" href="#">Time Spent On Homework</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Monthy Stats</a>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<center><h1 >Welcome to Your Sleep Statistics for this Week!</h1></center>
+<p>Enter how many hours of sleep you got for each day of the week below. Then press save. Then press reload graph and see your personalized sleep bar graph.
+
+  <p>
+<!-- <center><button type="button" class="btn btn-primary btn-lg" onclick="getSleep()";>Reload Graph!</button></center> -->
+
+<style>
+
+body {
+    background-color: #f6f5f3;
+
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14pt;
+}
+h1{
+  font-family: 'Open Sans', sans-serif;
+
+
+}
+
+.btn-primary {
+  position: relative;
+   left: -650px;
+   top: 25px;
+}
+
+</style>
+<div class="row">
+  <div class="col-9">
+    <canvas style="height: 25px; width: 100px" id="myChart" ></canvas>
+  </div>
+  <div class="col-3">
+  <br>
+    <div class="card" style="width: 18rem;">
+    <div class="card-header"><h5>
+        Your Personal Sleep Stats!</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li id="hello" class="list-group-item">Average Sleep per Day: <script>
+        </script> </li>
+        <li id = "sumOfHours" class="list-group-item"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .list-group-item{
+    font-size: 12pt
+  }
+</style>
+
+</br>
+
+<div class="row">
+
+<div class="input-group mb-3 col-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Monday</span>
+  </div>
+  <input id ="saveField" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+</div>
+
+<div class="input-group mb-3 col-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Tuesday</span>
+  </div>
+  <input id ="saveFieldTues" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+</div>
+
+<div class="input-group mb-3 col-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Wednesday</span>
+  </div>
+  <input id ="saveFieldWed" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+</div>
+
+<div class="input-group mb-3 col-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Thrusday</span>
+  </div>
+  <input id ="saveFieldThurs" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+</div>
+
+<div class="input-group mb-3 col-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Friday</span>
+  </div>
+  <input id ="saveFieldFri" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+</div>
+
+<div class="input-group mb-3 col-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Saturday</span>
+  </div>
+  <input id ="saveFieldSat" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+</div>
+
+<div class="input-group mb-3 col-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Sunday</span>
+  </div>
+  <input id ="saveFieldSun" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+</div>
+
+</div>
+<!-- 
+<input id ="saveField" placeholder="0" type="number" onchange="save(); getSleep()"></input>
+<button onclick = "save()";>Save for Monday</button>
+
+<input id ="saveFieldSat" placeholder="0" type="number"></input>
+<button onclick = "save()";>Save for Saturday</button>
+
+
+</br>
+</br>
+
+<input id ="saveFieldTues" placeholder="0" type="number"></input>
+<button onclick = "save()";>Save for Tuesday</button>
+<input id ="saveFieldFri" placeholder="0" type="number"></input>
+<button onclick = "save()";>Save for Friday</button>
+
+<br>
+<br>
+<input id ="saveFieldWed" placeholder="0" type="number"></input>
+<button onclick = "save()";>Save for Wednesday</button>
+<input id ="saveFieldSun" placeholder="0" type="number"></input>
+<button onclick = "save()";>Save for Sunday</button> -->
+
+
+<br>
+<br>
+
+
+
+<!-- <input id ="saveFieldThurs" placeholder="0" type="number"></input>
+<button onclick = "save()";>Save for Thursday</button>
+</br>
+</br> -->
+</br>
+
+<style>
+
+</style>
+
+
+
+<script>
+var path = window.location.pathname;
+var page = path.split("/").pop();
+var saveValueM = 0;
+var saveValueTues = 0;
+var saveValueWed = 0;
+var saveValueThurs = 0;
+var saveValueFri= 0;
+var saveValueSat = 0;
+var saveValueSun= 0;
+var averageSleepPerDay = 0;
+if (page == "sleep.html"){
+  load();
+
+
+
+}
+
+var dayCount = 0
+function load(){
+  dayCount = 0
+
+saveValueM = localStorage.getItem("saveValueM") || 0;
+document.getElementById("saveField").value = saveValueM;
+if(saveValueM > 0){
+  dayCount ++
+}
+
+
+
+saveValueTues = localStorage.getItem("saveValueTues") || 0;
+document.getElementById("saveFieldTues").value = saveValueTues;
+if(saveValueTues > 0){
+  dayCount ++
+}
+
+saveValueWed = localStorage.getItem("saveValueWed") || 0;
+document.getElementById("saveFieldWed").value = saveValueWed;
+if(saveValueWed > 0){
+  dayCount ++
+}
+
+saveValueThurs = localStorage.getItem("saveValueThurs") || 0;
+document.getElementById("saveFieldThurs").value = saveValueThurs;
+if(saveValueThurs > 0){
+  dayCount ++
+}
+
+saveValueFri = localStorage.getItem("saveValueFri") || 0;
+document.getElementById("saveFieldFri").value = saveValueFri;
+if(saveValueFri > 0){
+  dayCount ++
+}
+
+saveValueSat = localStorage.getItem("saveValueSat") || 0;
+document.getElementById("saveFieldSat").value = saveValueSat;
+if(saveValueSat > 0){
+  dayCount ++
+}
+
+saveValueSun = localStorage.getItem("saveValueSun") || 0;
+document.getElementById("saveFieldSun").value = saveValueSun;
+if(saveValueSun > 0){
+  dayCount ++
+}
+
+
+averageSleepPerDay = parseInt(saveValueM) + parseInt(saveValueTues) + parseInt(saveValueWed) + parseInt(saveValueThurs)  + parseInt(saveValueFri) + parseInt(saveValueSat) + parseInt(saveValueSun)
+
+};
+
+function save(){
+  saveValueM = document.getElementById("saveField").value;
+  localStorage.setItem("saveValueM", saveValueM)
+
+  saveValueTues = document.getElementById("saveFieldTues").value;
+  localStorage.setItem("saveValueTues", saveValueTues)
+
+  saveValueWed = document.getElementById("saveFieldWed").value;
+  localStorage.setItem("saveValueWed", saveValueWed)
+
+  saveValueThurs = document.getElementById("saveFieldThurs").value;
+  localStorage.setItem("saveValueThurs", saveValueThurs)
+
+  saveValueFri = document.getElementById("saveFieldFri").value;
+  localStorage.setItem("saveValueFri", saveValueFri)
+
+  saveValueSat = document.getElementById("saveFieldSat").value;
+  localStorage.setItem("saveValueSat", saveValueSat)
+
+  saveValueSun = document.getElementById("saveFieldSun").value;
+  localStorage.setItem("saveValueSun", saveValueSun)
+};
+
+
+
+
+
+function getSleep(){
+
+
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+
+        labels: ["Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", "Sunday"],
+        datasets: [{
+            backgroundColor: 'rgb(255, 99, 132)',
+            data: [saveValueM, saveValueTues, saveValueWed, saveValueThurs, saveValueFri, saveValueSat, saveValueSun],
+            backgroundColor: "lightblue",
+            label: "Amount of Sleep this Week",
+
+        }]
+
+
+
+    },
+
+    // Configuration options go here
+    options: {
+
+      scales: {
+
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 5,
+                                max: 10
+                            }
+                        }]
+                },
+
+    }
+
+
+
+});
+
+
+load()
+document.getElementById("hello").innerHTML = "Average Sleep per Day: " + Math.floor(averageSleepPerDay / dayCount)
+document.getElementById("sumOfHours").innerHTML = "Total Hours of Sleep: " + averageSleepPerDay
+
+
+
+}
+
+
+
+
+</script>
+</div>
+</body>
