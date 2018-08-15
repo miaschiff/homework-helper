@@ -1,0 +1,10 @@
+#grad1 {
+    height: 703px;
+    background: #ffddcc; /* For browsers that do not support gradients */
+    background: linear-gradient(#ffddcc, #d9a7c7); /* Standard syntax (must be last) */
+}
+h2{
+  position: absolute;
+  top:255px;
+  left:600px;
+  font-size:35px;
