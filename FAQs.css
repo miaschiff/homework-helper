@@ -1,20 +1,95 @@
 h1{
   font-family: 'Open Sans Condensed', sans-serif;
   position: absolute;
-  top:60px;
-  left:465px;
-}
-h4{
-  position: absolute;
-  top:150px;
-  left:40px;
+  top:80px;
+  left:205px;
+  font-size: 80px;
 }
 
-h5{
-  position:absolute;
-  top: 200px;
-  left: 90px;
+#question2{
+font-family: 'Bree Serif', serif;
+position:absolute;
+top: 200px;
+left: 230px;
+display:flex;
+flex-wrap:wrap;
+width: 75%;
+font-size: 35px;
 }
+#question2 div{
+flex-grow:1;
+}
+
+#answer2{
+font-family: 'Nova Mono', monospace;
+position:absolute;
+top: 50px;
+left: 115px;
+display:flex;
+flex-wrap:wrap;
+width: 95%;
+font-size: 25px;
+}
+#question4 div{
+flex-grow:1;
+}
+
+#question4{
+font-family: 'Bree Serif', serif;
+position:absolute;
+top: 70px;
+left: 0px;
+display:flex;
+flex-wrap:wrap;
+width: 100%;
+font-size: 35px;
+}
+#question4 div{
+flex-grow:1;
+}
+
+#answer4{
+font-family: 'Nova Mono', monospace;
+position:absolute;
+top: 50px;
+left: -110px;
+display:flex;
+flex-wrap:wrap;
+width: 100%;
+font-size: 25px;
+}
+#answer4 div{
+flex-grow:1;
+}
+
+#question6{
+font-family: 'Bree Serif', serif;
+position:absolute;
+top: 70px;
+left: -10px;
+display:flex;
+flex-wrap:wrap;
+width: 115%;
+font-size: 35px;
+}
+#question6 div{
+flex-grow:1;
+}
+
+#answer6{
+font-family: 'Nova Mono', monospace;
+position:absolute;
+top: 70px;
+left: 50px;
+display:flex;
+flex-wrap:wrap;
+width: 100%;
+font-size: 25px;
+}
+#answer6 div{
+flex-grow:1;
+}
+
 #grad11 {
     height: 704px;
     background: #ffddcc; /* For browsers that do not support gradients */
