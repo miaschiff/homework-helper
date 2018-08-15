@@ -1,5 +1,5 @@
 #grad1 {
-    height: 616.8px;
+    height: 672px;
     background: #ffddcc; /* For browsers that do not support gradients */
     background: linear-gradient(#ffddcc, #d9a7c7); /* Standard syntax (must be last) */
 }
@@ -7,13 +7,15 @@
 h1{
   font-family: 'Open Sans Condensed', sans-serif;
   position: absolute;
-  top:150px;
-  left:545px;
+  top:200px;
+  left:590px;
+  font-size:50px;
 }
 h2{
   position: absolute;
-  top:200px;
-  left:540px;
+  top:255px;
+  left:600px;
+  font-size:35px;
 }
 img{
   position: absolute;
@@ -27,19 +29,19 @@ img{
 }
 h7 {
     position: absolute;
-    top: 633px;
+    top: 695px;
     left: 15px;
 }
 img {
     width: 99%;
-    height: 20%;
+    height: 26%;
     opacity: 0.1;
 }
 
 
 .sidenav{
   position:absolute;
-  bottom:-7px;
+  bottom:0px;
   right:20px;
   font-size:18px;
 }
