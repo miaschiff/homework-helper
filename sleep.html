@@ -348,7 +348,7 @@ var chart = new Chart(ctx, {
 
 
 load()
-document.getElementById("hello").innerHTML = "Average Sleep per Day: " + Math.floor(averageSleepPerDay / dayCount)
+document.getElementById("hello").innerHTML = "Average Sleep per Day: " + Math.round(averageSleepPerDay / dayCount)
 document.getElementById("sumOfHours").innerHTML = "Total Hours of Sleep: " + averageSleepPerDay
 
 

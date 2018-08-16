@@ -69,7 +69,7 @@ function getGif() {
 		if (request.status >= 200 && request.status < 400){
 			data = JSON.parse(request.responseText);
 			console.log(data);
-			document.getElementById("giphyme").innerHTML = '<center><img src = "'+data.data.images.fixed_width.url+'"  title="GIF via Giphy" width="800"></center>';
+			document.getElementById("giphyme").innerHTML = '<center><img src = "'+data.data.images.fixed_width.url+'"  title="GIF via Giphy" width="400"></center>';
 		//	document.getElementById("title").innerHTML = '<center><h2>Title of GIF: ' + data.data.title + '</h2></center>';
 
 			console.log(data.data.title)
