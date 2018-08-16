@@ -6,6 +6,35 @@ h1{
   font-size: 80px;
 }
 
+h2{
+  font-family: 'Abril Fatface', cursive;
+  position: absolute;
+  top:580px;
+  left:20px;
+  font-size:35px;
+}
+
+img{
+  width: 20%;
+  position: absolute;
+  top: 370px;
+  left: 1050px;
+}
+
+.first{
+  position:absolute;
+  top: 450px;
+  left: -150px;
+  height: 100px;
+  width: 330px;
+  font-size:25px;
+  overflow:auto;
+  border:5px solid black;
+  font-size: 19px;
+}
+
+
+
 #question2{
 font-family: 'Bree Serif', serif;
 position:absolute;
@@ -91,7 +120,7 @@ flex-grow:1;
 }
 
 #grad11 {
-    height: 704px;
+    height: 770px;
     background: #ffddcc; /* For browsers that do not support gradients */
     background: linear-gradient(#ffddcc, #d9a7c7); /* Standard syntax (must be last) */
 }
