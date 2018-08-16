@@ -4,6 +4,10 @@ body{
 }
 
 p{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 10pt;
+  font-family: 'Open Sans Condensed', sans-serif
+  font-size: 15pt;
+}
+
+h1{
+  font-family: 'Open Sans Condensed', sans-serif
 }
