@@ -7,11 +7,3 @@ p{
   font-family: 'Open Sans', sans-serif;
   font-size: 10pt;
 }
-
-input#minutes{
-  margin-top: 20px;
-}
-
-datalist#tickmarks{
-  display: contents;
-}
