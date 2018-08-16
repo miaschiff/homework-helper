@@ -80,7 +80,7 @@
     <a href="https://twitter.com/" class="fa fa-twitter"></a>
     <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
 
-
+<!-- left popout -->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=7">
     <style>
@@ -88,13 +88,13 @@
         position: fixed;
         left: -454px;
         transition: 0.9s;
-        padding: 15px;
-        padding-right:75px;
-        width: 540px;
+        padding: 90px;
+        padding-right:70px;
+        width: 520px;
         text-decoration: none;
         font-size: 20px;
         color: black;
-        border-radius: 0 10px 10px 0;
+        border-radius: 60px 60px;
     }
 
     #mySidenav a:hover {
@@ -107,22 +107,65 @@
     }
 
 
+
+
     </style>
-    </head>
-    <body>
 
+<!-- right popout  -->
+    <style>
+    #mySidenavs a {
+        position: fixed;
+        right: -450px;
+        transition: 0.9s;
+        padding: 90px;
+        padding-left: 70px;
+        width: 520px;
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+        border-radius: 60px 60px;
+    }
+
+    #mySidenavs a:hover {
+        right: 0;
+    }
+
+
+
+
+     #info {
+        position:fixed;
+        top: 150px;
+
+        background-color: #FFE4E1;
+    }
+
+    </style>
+</head>
+
+<body>
     <div id="mySidenav" class="sidenav">
-      <a href="#" id="about"> Welcome to RightMinds where you become more organized by the surpass of each day !</a>
-
+      <a href="#" id="about"> Welcome to RightMinds! where you become more organized by the surpass of each day! </a>
 
     </div>
 
     <div style="margin-left:300px;">
+    </div>
+    <div id="mySidenavs" class="sidenav">
 
-
+      <a href="#" id="info"> This free, user friendly site can be your best friend! This site has helped me keep my life on track! </a>
     </div>
 
+    <div style="margin-right:300px;">
+    </div>
 
 </body>
+
+
+
+
+
+
+
 
 </html>

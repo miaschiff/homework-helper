@@ -8,13 +8,13 @@ h1{
   font-family: 'Open Sans Condensed', sans-serif;
   position: absolute;
   top:200px;
-  left:590px;
-  font-size:50px;
+  left:540px;
+  font-size:60px;
 }
 h2{
   position: absolute;
-  top:255px;
-  left:600px;
+  top:270px;
+  left:590px;
   font-size:35px;
 }
 img{
