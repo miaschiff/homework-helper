@@ -31,7 +31,7 @@
           My Stats
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
+          <a href="sleep.html" class="dropdown-item" >Amount Of Sleep</a>
           <a class="dropdown-item" href="#">Time Spent On Homework</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Monthly Stats</a>
@@ -47,11 +47,11 @@
 
 
 <body>
-  <center>
-      <h1>Today's Homework Schedule</h1>
+
+    <center> <h1>Today's Homework Schedule</h1> </center>
 <liv class="form-group">
   <label for="sell">Subject:</label>
-  <select class="form-control" id="sel1">
+  <select class="form-control" id="sel1" onclick = "getInfo()">
     <option>English</option>
     <option>Social Studies</option>
     <option>Math</option>
@@ -61,16 +61,33 @@
     <option>Other</option>
   </select>
 
-  <p>record your work here</p>
+<br>
 
 
-  <label for="usr">Work:</label>
+
+  <label for="usr">Work: record your work here</label>
 
   <input type="text" class="form-control" id="usr">
+<style>
 
+.form-control {
+   width: 600px;
+
+ }
+
+.card{
+  left: 800px;
+  width: 500px;
+  top: -250px;
+}
+
+</style>
+
+
+<br>
   <liv class="form-group">
-    <label for="sell">Duration:</label>
-    <select class="form-control" id="sel1">
+    <label for="sell" >Duration:</label>
+    <select class="form-control" id="sel2">
       <option>0 min</option>
       <option>10 min</option>
       <option>20 min</option>
@@ -94,7 +111,68 @@
       <option>200 min</option>
     </select>
 
-</center>
+  <script>
+  var subj;
+
+function getSubject(){
+  return document.getElementById("sel1").value;
+
+
+}
+
+function getWork(){
+  return document.getElementById("usr").value;
+}
+
+function getTime(){
+
+  return document.getElementById("sel2").value;
+}
+
+function display() {
+
+  subj =  ();
+  work = getWork();
+  time = getTime();
+
+}
+
+function createDiv(){
+
+  var div = document.createElement('div');
+  div.innerHTML = subj
+  console.log(div.innerHTML)
+  // doucment.body.appendChild(div)
+}
+
+
+
+
+  </script>
+<button onClick = "createDiv()">Submit</button>
+    <div class="card">
+      <div id = "stuff" class="card-body">
+    <div class="container">
+      <div class="col-sm">
+        <center><h4>To Do List:</h4></center>
+      </div>
+      <div class="row">
+
+        <div class="col-sm">
+          Subject
+        </div>
+
+        <div class="col-sm">
+          Work
+        </div>
+
+        <div class="col-sm">
+Time        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
 </body>
 
 
