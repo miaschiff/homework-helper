@@ -22,9 +22,36 @@ img{
 }
 
 .first{
+  background: white;
   position:absolute;
   top: 450px;
   left: -150px;
+  height: 100px;
+  width: 330px;
+  font-size:25px;
+  overflow:auto;
+  border:5px solid black;
+  font-size: 19px;
+}
+
+.second{
+  background: white;
+  position:absolute;
+  top: 450px;
+  left: 290px;
+  height: 100px;
+  width: 330px;
+  font-size:25px;
+  overflow:auto;
+  border:5px solid black;
+  font-size: 19px;
+}
+
+.third{
+  background: white;
+  position:absolute;
+  top: 450px;
+  left: 730px;
   height: 100px;
   width: 330px;
   font-size:25px;
