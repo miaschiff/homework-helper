@@ -53,8 +53,8 @@
     <center> <h1>Today's Homework Schedule</h1> </center>
 
 <liv class="form-group">
-  <label for="sell">Subject:</label>
-  <select class="form-control" id="sel1" onclick = "getInfo()">
+  <label id = "sel1" for="sell">Subject:</label>
+  <select class="form-control"  >
     <option>English</option>
     <option>Social Studies</option>
     <option>Math</option>
@@ -70,7 +70,7 @@
 
   <label for="usr">Work: record your work here</label>
 
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" >
 <style>
 
 .form-control {
@@ -89,8 +89,8 @@
 
 <br>
   <liv class="form-group">
-    <label for="sell" >Duration:</label>
-    <select class="form-control" id="sel2">
+    <label id = "sel2" for="sell" >Duration:</label>
+    <select class="form-control">
       <option>0 min</option>
       <option>10 min</option>
       <option>20 min</option>
@@ -121,15 +121,15 @@
 
   <script>
   var subj;
+  var work;
 
 function getSubject(){
   return document.getElementById("sel1").value;
 
-
 }
 
 function getWork(){
-  return document.getElementById("usr").value;
+   return document.getElementById("usr").value;
 }
 
 function getTime(){
@@ -139,10 +139,10 @@ function getTime(){
 
 function display() {
 
-  subj =  ();
+  subj =  getSubject();
   work = getWork();
   time = getTime();
-
+console.log(work);
 }
 
 function createDiv(){
@@ -157,7 +157,7 @@ function createDiv(){
 
 
   </script>
-<button onClick = "createDiv()">Submit</button>
+<button onClick = "display()">Submit</button>
     <div class="card">
       <div id = "stuff" class="card-body">
     <div class="container">
