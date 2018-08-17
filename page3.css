@@ -8,18 +8,19 @@ h1{
   font-family: 'Open Sans Condensed', sans-serif;
   position: absolute;
   top:200px;
-  left:540px;
+  left:560px;
   font-size:60px;
 }
 h2{
   position: absolute;
   top:270px;
-  left:590px;
+  left:600px;
   font-size:35px;
 }
+
 img{
-  position: fixed;
-  top:560px;
+  position: relative;
+  bottom:150px;
   left:10px;
 }
 
@@ -35,7 +36,7 @@ h7 {
 }
 img {
     width: 99%;
-    height: 29%;
+    height: -9%;
     opacity: 0.1;
 }
 
