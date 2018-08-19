@@ -1,4 +1,71 @@
+<!-- Info about each of us -->
+
 <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=100">
+<style>
+.container {
+  position: relative;
+  width: 25%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 15px;
+  padding: 20px;
+  padding-left: 15px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<h2>About Us</h2>
+
+
+<div class="container">
+  <link rel="stylesheet" type="text/css" href="about.css">
+  <img src="https://bit.ly/2MjEabT" alt="Esha Hafeez" class="image">
+  <div class="overlay">
+    <div class="text"> My name is Esha Hafeez.
+    I am a rising senior in Saunders Trades and Technical High School.
+    Creativity attracts me in all aspects. I appreciate determination and perseverance.
+  </div>
+  </div>
+</div>
+
+</body>
+</html>
 
 
 <head>
@@ -18,7 +85,7 @@
         <p> Esha Hafeez! </p>
         <p> Anahi Tovar! </p>
         <p> Nicole Merchan! </p>
-        <p> Mia Schiff! </p>
+        <p> Mia Schiff </p>
         <img src=""/>
         </center>
 
