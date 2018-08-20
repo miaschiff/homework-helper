@@ -8,13 +8,13 @@ h1{
   font-family: 'Open Sans Condensed', sans-serif;
   position: absolute;
   top:200px;
-  left:560px;
+  left:535px;
   font-size:60px;
 }
 h2{
   position: absolute;
   top:270px;
-  left:590px;
+  left:562px;
   font-size:40px;
 }
 
@@ -43,7 +43,7 @@ img {
 .sidenav {
     position:absolute;
     top: 705px;
-    left:1280px;
+    left:1215px;
     font-size:18px;
 }
 
