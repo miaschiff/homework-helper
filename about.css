@@ -14,10 +14,9 @@ body {
     background: #ffddcc; /* For browsers that do not support gradients */
     background: linear-gradient(#ffddcc, #d9a7c7); /* Standard syntax (must be last) */
 }
-
-
-p{
-  position: relative;
-  top:-500px;
-  left:600px;
-  font-size:35px;
+.image {
+    border-radius: 50%;
+}
+.overlay {
+    border-radius: 50%;
+}
