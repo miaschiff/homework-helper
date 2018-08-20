@@ -37,7 +37,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
           <a class="dropdown-item" href="timeSpentOnHW.html">Time Spent On Homework</a>
-        
+
         </div>
       </li>
 
@@ -72,9 +72,9 @@
 
 
 
-    <label for="usr">Work: Record your task here</label>
+    <label for="usr">Work:</label>
 
-    <input id = "WORK" type="text" class="form-control" >
+    <input id = "WORK" type="text" class="form-control" onfocus="this.value=''" value="Record Your Task Here"" >
     <style>
 
       .form-control {
@@ -93,9 +93,9 @@
 
   <br>
   <liv class="form-group">
-  <label for="usr">Time: How much time will this take?</label>
+  <label for="usr">Time:</label>
 
-    <input id = "sel2" type="text" class="form-control" >
+    <input id = "sel2" type="text" class="form-control" onfocus="this.value=''" value="How Much Time Will This Take?"" >
 
 
 
@@ -122,10 +122,14 @@
 
         $( "#subjectDataWORK" ).append( "<p>" + work + "</p>");
 
-
+        erase();
       }
 
+function erase(){
 
+  work = " "
+  time = " "
+}
     </script>
     <button onClick = "doIt()">Submit</button>
     <div class="card">

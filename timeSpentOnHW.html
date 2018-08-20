@@ -34,7 +34,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
           <a class="dropdown-item" href="timeSpentOnHW.html">Time Spent On Homework</a>
-        
+
         </div>
       </li>
 
@@ -82,7 +82,7 @@ h1{
    #pie-chart {
 
 position: absolute;
-left: 50%;
+left: 45%;
 top: 15%;
  }
 </style>
@@ -93,7 +93,7 @@ top: 15%;
 </div>
 
 
- 
+
     <canvas id="pie-chart" width="700" height="200"></canvas>
 
 
@@ -116,60 +116,60 @@ top: 15%;
   .list-group-item{
     font-size: 12pt
   }
+
+.row{
+
+  margin-top: 50px;
+}
+
 </style>
 
 
 
 
-</br>
 
-
-<br>
-
-<br> 
 
 <div class="row">
-
 <div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">English</span>
   </div>
-  <input id ="saveField" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+  <input  id ="saveField" type="number" class="form-control" placeholder="Time Spent on English" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
 <div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Social Studies</span>
   </div>
-  <input id ="saveFieldTues" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+  <input id ="saveFieldTues" type="number" class="form-control" placeholder="Time Spent on Social Studies" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
 <div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Math</span>
   </div>
-  <input id ="saveFieldWed" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+  <input id ="saveFieldWed" type="number" class="form-control" placeholder="Time Spent on Math" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
 <div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Foreign Language</span>
   </div>
-  <input id ="saveFieldThurs" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+  <input id ="saveFieldThurs" type="number" class="form-control" placeholder="Time Spent on Foreign Language" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
 <div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Science</span>
   </div>
-  <input id ="saveFieldFri" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+  <input id ="saveFieldFri" type="number" class="form-control" placeholder="Time Spent on Science" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
 <div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Other</span>
   </div>
-  <input id ="saveFieldSat" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+  <input id ="saveFieldSat" type="number" class="form-control" placeholder="Time Spent on Other" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
 
@@ -262,7 +262,7 @@ function save(){
   other = document.getElementById("saveFieldSat").value;
   localStorage.setItem("other", other)
 
-  
+
 };
 
 
