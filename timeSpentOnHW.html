@@ -46,13 +46,14 @@
 
 
 
+
   <div class="container">
 
 
 
 
-<center><h1 >Welcome to Your Sleep Statistics for this Week!</h1></center>
-<p><center>Enter how many hours of sleep you got for each day of the week below. </center><p>
+<center><h1 >Welcome to Your Homework Statistics for Today!</h1></center>
+<p><center>Enter how many minutes it took you to do the homework in each class below. </center><p>
 <!-- <center><button type="button" class="btn btn-primary btn-lg" onclick="getSleep()";>Reload Graph!</button></center> -->
 
 <style>
@@ -78,12 +79,25 @@ h1{
    top: 25px;
 }
 
+   #pie-chart {
+
+position: absolute;
+left: 50%;
+top: 15%;
+ }
 </style>
 <div class="row">
   <div class="col-9">
     <canvas style="height: 25px; width: 100px" id="myChart" ></canvas>
-  </div>
-  <div class="col-3">
+
+</div>
+
+
+ 
+    <canvas id="pie-chart" width="700" height="200"></canvas>
+
+
+  <!-- <div class="col-3">
   <br>
     <div class="card" style="width: 18rem;">
     <div class="card-header"><h5>
@@ -97,100 +111,77 @@ h1{
     </div>
   </div>
 </div>
-
+ -->
 <style>
   .list-group-item{
     font-size: 12pt
   }
 </style>
 
+
+
+
 </br>
+
+
+<br>
+
+<br> 
 
 <div class="row">
 
-<div class="input-group mb-3 col-3">
+<div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Monday</span>
+    <span class="input-group-text" id="basic-addon1">English</span>
   </div>
   <input id ="saveField" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
-<div class="input-group mb-3 col-3">
+<div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Tuesday</span>
+    <span class="input-group-text" id="basic-addon1">Social Studies</span>
   </div>
   <input id ="saveFieldTues" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
-<div class="input-group mb-3 col-3">
+<div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Wednesday</span>
+    <span class="input-group-text" id="basic-addon1">Math</span>
   </div>
   <input id ="saveFieldWed" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
-<div class="input-group mb-3 col-3">
+<div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Thursday</span>
+    <span class="input-group-text" id="basic-addon1">Foreign Language</span>
   </div>
   <input id ="saveFieldThurs" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
-<div class="input-group mb-3 col-3">
+<div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Friday</span>
+    <span class="input-group-text" id="basic-addon1">Science</span>
   </div>
   <input id ="saveFieldFri" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
-<div class="input-group mb-3 col-3">
+<div class="input-group mb-3 col-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Saturday</span>
+    <span class="input-group-text" id="basic-addon1">Other</span>
   </div>
   <input id ="saveFieldSat" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
 </div>
 
-<div class="input-group mb-3 col-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Sunday</span>
-  </div>
-  <input id ="saveFieldSun" type="number" class="form-control" placeholder="Hours of sleep" aria-label="Hours of sleep" aria-describedby="basic-addon1" onchange="save(); getSleep()">
+
+
 </div>
 
-</div>
-<!--
-<input id ="saveField" placeholder="0" type="number" onchange="save(); getSleep()"></input>
-<button onclick = "save()";>Save for Monday</button>
-
-<input id ="saveFieldSat" placeholder="0" type="number"></input>
-<button onclick = "save()";>Save for Saturday</button>
-
-
-</br>
-</br>
-
-<input id ="saveFieldTues" placeholder="0" type="number"></input>
-<button onclick = "save()";>Save for Tuesday</button>
-<input id ="saveFieldFri" placeholder="0" type="number"></input>
-<button onclick = "save()";>Save for Friday</button>
-
-<br>
-<br>
-<input id ="saveFieldWed" placeholder="0" type="number"></input>
-<button onclick = "save()";>Save for Wednesday</button>
-<input id ="saveFieldSun" placeholder="0" type="number"></input>
-<button onclick = "save()";>Save for Sunday</button> -->
-
-
-<br>
-<br>
 
 
 
-<!-- <input id ="saveFieldThurs" placeholder="0" type="number"></input>
-<button onclick = "save()";>Save for Thursday</button>
-</br>
-</br> -->
+
+
+
 </br>
 
 <style>
@@ -202,95 +193,76 @@ h1{
 <script>
 var path = window.location.pathname;
 var page = path.split("/").pop();
-var saveValueM = 0;
-var saveValueTues = 0;
-var saveValueWed = 0;
-var saveValueThurs = 0;
-var saveValueFri= 0;
-var saveValueSat = 0;
-var saveValueSun= 0;
+var english = 0;
+var socialStudies = 0;
+var math = 0;
+var Language = 0;
+var science= 0;
+var other = 0;
+va= 0;
 var averageSleepPerDay = 0;
-if (page == "sleep.html"){
+if (page == "timeSpentOnHW.html"){
   load();
 
 
 
 }
 
-var dayCount = 0
 function load(){
-  dayCount = 0
 
-saveValueM = localStorage.getItem("saveValueM") || 0;
-document.getElementById("saveField").value = saveValueM;
-if(saveValueM > 0){
-  dayCount ++
-}
+english = localStorage.getItem("english") || 0;
+document.getElementById("saveField").value = english;
 
 
 
-saveValueTues = localStorage.getItem("saveValueTues") || 0;
-document.getElementById("saveFieldTues").value = saveValueTues;
-if(saveValueTues > 0){
-  dayCount ++
-}
 
-saveValueWed = localStorage.getItem("saveValueWed") || 0;
-document.getElementById("saveFieldWed").value = saveValueWed;
-if(saveValueWed > 0){
-  dayCount ++
-}
-
-saveValueThurs = localStorage.getItem("saveValueThurs") || 0;
-document.getElementById("saveFieldThurs").value = saveValueThurs;
-if(saveValueThurs > 0){
-  dayCount ++
-}
-
-saveValueFri = localStorage.getItem("saveValueFri") || 0;
-document.getElementById("saveFieldFri").value = saveValueFri;
-if(saveValueFri > 0){
-  dayCount ++
-}
-
-saveValueSat = localStorage.getItem("saveValueSat") || 0;
-document.getElementById("saveFieldSat").value = saveValueSat;
-if(saveValueSat > 0){
-  dayCount ++
-}
-
-saveValueSun = localStorage.getItem("saveValueSun") || 0;
-document.getElementById("saveFieldSun").value = saveValueSun;
-if(saveValueSun > 0){
-  dayCount ++
-}
+socialStudies = localStorage.getItem("socialStudies") || 0;
+document.getElementById("saveFieldTues").value = socialStudies;
 
 
-averageSleepPerDay = parseInt(saveValueM) + parseInt(saveValueTues) + parseInt(saveValueWed) + parseInt(saveValueThurs)  + parseInt(saveValueFri) + parseInt(saveValueSat) + parseInt(saveValueSun)
+math = localStorage.getItem("math") || 0;
+document.getElementById("saveFieldWed").value = math;
+
+
+Language = localStorage.getItem("Language") || 0;
+document.getElementById("saveFieldThurs").value = Language;
+
+
+science = localStorage.getItem("science") || 0;
+document.getElementById("saveFieldFri").value = science;
+
+other = localStorage.getItem("other") || 0;
+document.getElementById("saveFieldSat").value = other;
+
+
+
+
+
+
+averageSleepPerDay = parseInt(english) + parseInt(socialStudies) + parseInt(math) + parseInt(Language)  + parseInt(science) + parseInt(other)
 
 };
 
 function save(){
-  saveValueM = document.getElementById("saveField").value;
-  localStorage.setItem("saveValueM", saveValueM)
+  english = document.getElementById("saveField").value;
+  localStorage.setItem("english", english)
 
-  saveValueTues = document.getElementById("saveFieldTues").value;
-  localStorage.setItem("saveValueTues", saveValueTues)
+  socialStudies = document.getElementById("saveFieldTues").value;
+  localStorage.setItem("socialStudies", socialStudies)
 
-  saveValueWed = document.getElementById("saveFieldWed").value;
-  localStorage.setItem("saveValueWed", saveValueWed)
+  math = document.getElementById("saveFieldWed").value;
+  localStorage.setItem("math", math)
 
-  saveValueThurs = document.getElementById("saveFieldThurs").value;
-  localStorage.setItem("saveValueThurs", saveValueThurs)
+  Language = document.getElementById("saveFieldThurs").value;
+  localStorage.setItem("Language", Language)
 
-  saveValueFri = document.getElementById("saveFieldFri").value;
-  localStorage.setItem("saveValueFri", saveValueFri)
+  science = document.getElementById("saveFieldFri").value;
+  localStorage.setItem("science", science)
 
-  saveValueSat = document.getElementById("saveFieldSat").value;
-  localStorage.setItem("saveValueSat", saveValueSat)
+  other = document.getElementById("saveFieldSat").value;
+  localStorage.setItem("other", other)
 
-  saveValueSun = document.getElementById("saveFieldSun").value;
-  localStorage.setItem("saveValueSun", saveValueSun)
+  
 };
 
 
@@ -310,12 +282,12 @@ var chart = new Chart(ctx, {
     // The data for our dataset
     data: {
 
-        labels: ["Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", "Sunday"],
+        labels: ["English", "Social Studies", "Math", "Foreign Language", "Science", "Other"],
         datasets: [{
             backgroundColor: 'rgb(255, 99, 132)',
-            data: [saveValueM, saveValueTues, saveValueWed, saveValueThurs, saveValueFri, saveValueSat, saveValueSun],
+            data: [english, socialStudies, math, Language, science, other],
             backgroundColor: "lightblue",
-            label: "Amount of Sleep this Week",
+            label: "Time Spent On Homework In Each Class Today ",
 
         }]
 
@@ -332,9 +304,9 @@ var chart = new Chart(ctx, {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 10,
-                                stepValue: 5,
-                                max: 10
+                                steps: 20,
+                                stepValue: 10,
+                                max: 60
                             }
                         }]
                 },
@@ -347,15 +319,29 @@ var chart = new Chart(ctx, {
 
 
 load()
-document.getElementById("hello").innerHTML = "Average Sleep per Day: " + Math.round(averageSleepPerDay / dayCount)
-document.getElementById("sumOfHours").innerHTML = "Total Hours of Sleep: " + averageSleepPerDay
+// document.getElementById("sumOfHours").innerHTML = "Total Hours of Sleep: " + averageSleepPerDay
 
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["English", "Social Studies", "Math", "Language", "Science", "Other"],
+      datasets: [{
+        label: "Population (millions)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: [english,socialStudies,math,Language,science,other]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Ratio Of Time Spent On Different Subjects'
+
+      }
+    }
+});
 
 
 }
-
-
-
 
 </script>
 </div>
