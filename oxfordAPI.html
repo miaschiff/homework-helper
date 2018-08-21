@@ -1,19 +1,18 @@
-<!doctype html>
+<html>
 <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
 
 </head>
 
-  <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="index.html">RightMinds!</a>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">RightMinds!</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,7 +20,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a href = "index.html" class="nav-link" >Home <span class="sr-only">(current)</span></a>
+        <a href = "index.html" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="homework.html">Today's Homework</a>
@@ -35,8 +34,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
-          <a class="dropdown-item" href="timeSpentOnHW.html">Time Spent On Homework</a>
-        
+          <a class="dropdown-item" href="#">Time Spent On Homework</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Monthy Stats</a>
         </div>
       </li>
 
@@ -45,16 +45,22 @@
   </div>
 </nav>
 
-<span id="giphyme"></span>
-</br>
-
-
-<button type="button" class="btn btn-success" value="Press for New GIF" onClick="getGif()">Push For A Mood Boosting GIF!</button>
-
-
+	<br>
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="wolfText">
+  <button type="button" class="btn btn-primary" id="wolfBtn">Solve!</button>
+  <div id="wolfResult"></div>
+</div>
+    
+  </div>
 </div>
 
-
+<center>
 
 <div class="row">
     <div class="col m6 offset-m3">
@@ -77,56 +83,25 @@
   <div class="page-footer m12">
     <span id="bottom-footer">API from <a href="https://icanhazdadjoke.com/"> https://icanhazdadjoke.com/</a></span>
   </div>
-<style>
-body {
-    background-color: #f6f5f3;
 
-}</style>
-<script>
-function getGif() {
-	var search = "happy"
-	//sets bar to an empty string
-	q = search; // search query
+  </center>
 
-	request = new XMLHttpRequest;
-	request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q, true);
-
-	request.onload = function() {
-		if (request.status >= 200 && request.status < 400){
-			data = JSON.parse(request.responseText);
-			console.log(data);
-			document.getElementById("giphyme").innerHTML = '<img src = "'+data.data.images.fixed_width.url+'"  title="GIF via Giphy" width="800">';
-		//	document.getElementById("title").innerHTML = '<center><h2>Title of GIF: ' + data.data.title + '</h2></center>';
-
-			console.log(data.data.title)
-
-		} else {
-			console.log('reached giphy, but API returned an error');
-		}
-	};
-
-	request.onerror = function() {
-		console.log('connection error');
-	};
-
-	request.send();
-}
+<script type="text/javascript">
+	
+	$("#wolfBtn").click(function(){
+		var url = "http://api.wolframalpha.com/v2/query?output=json&appid=JG6VLV-6RJJ"
+		url+="9QVW39&input="
+		url+=$("#wolfText").val()
+		console.log(url)
+		$.get(url, function(data) {
+			$( "#wolfResult" ).html( data );
+			console.log(JSON.stringify(data))
+		});
+	});
 
 
 
-$(document).ready(function() {
-  
-  function getJoke() {
-$.getJSON("https://icanhazdadjoke.com/", function(json) { 
-  let dadJoke = json.joke;
-   $("#quote").html(dadJoke);
-      });
-}
-  
-  getJoke();
-  $("#getJoke").on("click", getJoke);
-
-
-});
 </script>
+
 </body>
+</html>

@@ -1,0 +1,227 @@
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.css" >
+
+  <script src="oxfordAPI.js"></script>
+
+
+
+</head>
+<body onload="getGif()">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">RightMinds!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a href = "index.html" class="nav-link" >Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="homework.html">Today's Homework</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="dict.html">Mood Booster/De-Stress</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Stats
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
+          <a class="dropdown-item" href="timeSpentOnHW.html">Time Spent On Homework</a>
+        
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+<style>
+.main {
+  width: 50px;
+  margin-top: -290px;
+  margin-bottom: 50px;
+
+  text-align: center;
+}
+#gifButton{
+
+
+  top: 15px:;
+}
+
+#cardJOKES {
+  position: absolute;
+top: -400px;
+  width: 400px;
+  left: 1000;
+
+}
+
+#cardQUOTES{
+  position: absolute;
+top: 0px;
+height: 100px;
+  width: 800px;
+  left: 900px;
+
+}
+
+
+
+button {
+  position: relative;
+  left: 30px;
+  top: 0px;
+}
+
+
+
+
+a {
+  color:white;
+}
+
+body {
+    background-color: #f6f5f3;
+
+}
+
+</style>
+<center>
+
+<h1>Welcome to Your Mood Booster Page</h1>
+<h2>This is a page to destress with GIFs, Dad Jokes, and Quotes</h2>
+<h3>Have Fun!</h3>
+
+</center>
+
+<span id="giphyme"></span>
+
+
+  <div class="row">
+
+    
+      <div class="card light-blue lighten-2">
+        <div class="card-content white-text" id="cardQUOTES">
+          <span class="card-title"><h3><strong>Random QUOTES:</strong></h3></span>
+           <h5 id="GetQuote">&ldquo;We shall defend our island, whatever the cost may be, we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender.&rdquo;</h5>
+      <h1 id="author"></h1>
+
+        <div class="row">
+          <div class="col m3 offset-m9" id="joke-button">
+          <button id="random">get a quote</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col m6 offset-m3">
+    <br>
+    <button id="gifButton" type="button" class="btn btn-success" value="Press for New GIF" onClick="getGif() ">Push For A Mood Boosting GIF!</button>
+
+        <div class="card-content white-text" id="cardJOKES">
+          <span class="card-title"><h3><strong>Random Dad Joke:</strong></h3></span>
+          <h4 id="quote"></h4>
+
+        <div class="row">
+          <div class="col m3 offset-m9" id="joke-button">
+            <button type="button" class="btn light-blue lighten-1 flow-text" id="getJoke">New Dad Joke</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+</br>
+
+
+</br>
+
+
+
+<script>
+
+function getGif() {
+	var search = "happy"
+	//sets bar to an empty string
+	q = search; // search query
+
+	request = new XMLHttpRequest;
+	request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q, true);
+
+	request.onload = function() {
+		if (request.status >= 200 && request.status < 400){
+			data = JSON.parse(request.responseText);
+			console.log(data);
+			document.getElementById("giphyme").innerHTML = '<img src = "'+data.data.images.fixed_width.url+'"  title="GIF via Giphy" width="800">';
+		//	document.getElementById("title").innerHTML = '<center><h2>Title of GIF: ' + data.data.title + '</h2></center>';
+
+			console.log(data.data.title)
+
+		} else {
+			console.log('reached giphy, but API returned an error');
+		}
+	};
+
+	request.onerror = function() {
+		console.log('connection error');
+	};
+
+	request.send();
+}
+
+//Uses the forismatic.com API to generate random quotes when the uses
+//clicks the button labeled "Get a quote".
+
+//The "Get a light bulb" button is there because the lightbulb graphic
+//I'm using requires attribution. Visit freepik.com for great free
+//vector graphics and images. I always check this site first when I'm
+//looking for something to use.
+
+function randomQuote() {
+ $.ajax({
+      url: "https://api.forismatic.com/api/1.0/",
+      jsonp: "jsonp",
+      dataType: "jsonp",
+      data: {
+        method: "getQuote",
+        lang: "en",
+        format: "jsonp"
+      },
+      success: function(quote) {
+        $('#GetQuote').html('&ldquo;'+quote.quoteText+'&rdquo;')
+        $('#author').html("-"+quote.quoteAuthor)
+      }
+    });
+}
+
+randomQuote();
+
+//Click on the button to generate another random quote
+
+$('#random').click(function() {
+  
+    randomQuote();
+   
+  })
+
+</script>
+  
+
+</body>
