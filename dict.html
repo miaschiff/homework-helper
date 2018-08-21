@@ -36,7 +36,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
           <a class="dropdown-item" href="timeSpentOnHW.html">Time Spent On Homework</a>
-        
+
         </div>
       </li>
 
@@ -60,18 +60,18 @@
 
 #cardJOKES {
   position: absolute;
-top: -400px;
+top: 0px;
   width: 400px;
-  left: 1000;
+  left: 700;
 
 }
 
 #cardQUOTES{
   position: absolute;
-top: 0px;
-height: 100px;
+top: -250px;
+height: -400px;
   width: 800px;
-  left: 900px;
+  left: 700px;
 
 }
 
@@ -99,8 +99,8 @@ body {
 <center>
 
 <h1>Welcome to Your Mood Booster Page</h1>
-<h2>This is a page to destress with GIFs, Dad Jokes, and Quotes</h2>
-<h3>Have Fun!</h3>
+<h2>This is a page to destress with GIFs, Dad Jokes, and Quotes. Have Fun!</h2>
+
 
 </center>
 
@@ -109,7 +109,7 @@ body {
 
   <div class="row">
 
-    
+
       <div class="card light-blue lighten-2">
         <div class="card-content white-text" id="cardQUOTES">
           <span class="card-title"><h3><strong>Random QUOTES:</strong></h3></span>
@@ -132,6 +132,7 @@ body {
     <div class="col m6 offset-m3">
     <br>
     <button id="gifButton" type="button" class="btn btn-success" value="Press for New GIF" onClick="getGif() ">Push For A Mood Boosting GIF!</button>
+    <div class="card" style="width: 18rem;">
 
         <div class="card-content white-text" id="cardJOKES">
           <span class="card-title"><h3><strong>Random Dad Joke:</strong></h3></span>
@@ -169,7 +170,7 @@ function getGif() {
 		if (request.status >= 200 && request.status < 400){
 			data = JSON.parse(request.responseText);
 			console.log(data);
-			document.getElementById("giphyme").innerHTML = '<img src = "'+data.data.images.fixed_width.url+'"  title="GIF via Giphy" width="800">';
+			document.getElementById("giphyme").innerHTML = '<img src = "'+data.data.images.fixed_width.url+'"  title="GIF via Giphy" width="600" height="300">';
 		//	document.getElementById("title").innerHTML = '<center><h2>Title of GIF: ' + data.data.title + '</h2></center>';
 
 			console.log(data.data.title)
@@ -216,12 +217,12 @@ randomQuote();
 //Click on the button to generate another random quote
 
 $('#random').click(function() {
-  
+
     randomQuote();
-   
+
   })
 
 </script>
-  
+
 
 </body>

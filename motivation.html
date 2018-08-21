@@ -36,7 +36,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a href="sleep.html" class="dropdown-item" href="#">Amount Of Sleep</a>
           <a class="dropdown-item" href="timeSpentOnHW.html">Time Spent On Homework</a>
-        
+
         </div>
       </li>
 
@@ -56,14 +56,14 @@
 
 
 
-<div class="row">
+
     <div class="col m6 offset-m3">
       <div class="card light-blue lighten-2">
         <div class="card-content white-text" id="card">
           <span class="card-title">Random Dad Jokes</span>
           <h4 id="quote"></h4>
 
-        <div class="row">
+
           <div class="col m3 offset-m9" id="joke-button">
             <button type="button" class="btn light-blue lighten-1 flow-text" id="getJoke">next</button>
               </div>
@@ -115,14 +115,14 @@ function getGif() {
 
 
 $(document).ready(function() {
-  
+
   function getJoke() {
-$.getJSON("https://icanhazdadjoke.com/", function(json) { 
+$.getJSON("https://icanhazdadjoke.com/", function(json) {
   let dadJoke = json.joke;
    $("#quote").html(dadJoke);
       });
 }
-  
+
   getJoke();
   $("#getJoke").on("click", getJoke);
 
