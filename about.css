@@ -2,21 +2,14 @@ body {
   text-align: center;
  }
 
-#page-wrap {
-  text-align: right;
-  width: 1400px;
-  margin: 0 auto;
-}
 
 
-#grad1 {
-    height: px;
-    background: #ffddcc; /* For browsers that do not support gradients */
-    background: linear-gradient(#ffddcc, #d9a7c7); /* Standard syntax (must be last) */
-}
 .image {
     border-radius: 50%;
 }
 .overlay {
     border-radius: 50%;
 }
+
+ body {
+     background-color: lightblue;
